@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import { Card } from "react-bootstrap";
 import Wrapper from '../Extras/Wrapper';
 
 const Portfolio = () => {
@@ -63,20 +63,18 @@ const Portfolio = () => {
 
     const ProjectCard = (props) => {
         return (
-            <div class="col-lg-3 col-md-4 mb-1">
-                <div class="card h-100">
-                    <img class="card-img-top" src={props.imageSRC} alt={props.alt}/>
-                        <div class="card-body">
-                            <h4 class="card-title">{props.title}</h4>
-                            <p class="card-text">{props.about}</p>
-                            <div class="card-text-2">{props.functionality}</div>
-                        </div>
-                        <div class="card-footer">
-                            <a href={props.deployedLink} class="btn btn-primary" id={props.deployedLinkID}>Open In Browser</a>
-                            <a href={props.gitHub} class="btn btn-primary2" id={props.gitHubLinkID}>GitHub Project Page</a>
-                        </div>
-                    </div>
-                </div>
+            <Card className="bg-dark text-white">
+                <Card.Img src={props.imageSRC} alt={props.alt} />
+                <Card.ImgOverlay>
+                    <Card.Title>{props.title}</Card.Title>
+                    <Card.Text>{props.about}</Card.Text>
+                    <Card.Text>{props.functionality}</Card.Text>
+                    <Card.Text>{props.deployedLink}</Card.Text>
+                    <Card.Text>{props.deployedLinkID} Open In Browser </Card.Text>
+                    <Card.Text>{props.gitHub}</Card.Text>
+                    <Card.Text>{props.gitHubLinkID} GitHub Project Page</Card.Text>
+                </Card.ImgOverlay>
+            </Card>
         )
     };
 
