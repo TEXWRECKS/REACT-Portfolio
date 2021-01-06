@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import Wrapper from '../Extras/Wrapper';
 
@@ -61,21 +61,21 @@ const Portfolio = () => {
         }
     ];
 
-    const ProjectCard = (props) => {
+    const ProjectCard = (card, index) => {
         return (
-            <Card className="bg-dark text-white">
-                <Card.Img src={props.imageSRC} alt={props.alt} />
+            <Card className="bg-dark text-white" key={index}>
+                <Card.Img src={card.imageSRC} alt={card.alt} />
                 <Card.ImgOverlay>
-                    <Card.Title>{props.title}</Card.Title>
-                    <Card.Text>{props.about}</Card.Text>
-                    <Card.Text>{props.functionality}</Card.Text>
-                    <Card.Text>{props.deployedLink}</Card.Text>
-                    <Card.Text>{props.deployedLinkID} Open In Browser </Card.Text>
-                    <Card.Text>{props.gitHub}</Card.Text>
-                    <Card.Text>{props.gitHubLinkID} GitHub Project Page</Card.Text>
+                    <Card.Title>{card.title}</Card.Title>
+                    <Card.Text>{card.about}</Card.Text>
+                    <Card.Text>{card.functionality}</Card.Text>
+                    <Card.Text>{card.deployedLink}</Card.Text>
+                    <Card.Text>{card.deployedLinkID} Open In Browser </Card.Text>
+                    <Card.Text>{card.gitHub}</Card.Text>
+                    <Card.Text>{card.gitHubLinkID} GitHub Project Page</Card.Text>
                 </Card.ImgOverlay>
             </Card>
-        )
+        );
     };
 
     return (
